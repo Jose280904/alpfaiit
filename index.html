@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ALPFA IIT student chapter at Illinois Institute of Technology">
+<title>Home | ALPFA IIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-mark">IIT</span><span>ALPFA IIT</span></a>
+    <button class="menu-btn" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+<!-- Navigation tabs -->
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">Our Chapter</a>
+      <a href="board.html">Executive Board</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="events.html">Events</a>
+      <a href="join.html">Get Involved</a>
+    </nav>
+    <a class="nav-cta" href="join.html">Join ALPFA IIT</a>
+  </div>
+</header>
+
+<!-- About the IIT Chapter -->
+<main>
+<section class="hero">
+  <div class="container hero-content reveal visible">
+    <div class="eyebrow">Illinois Institute of Technology</div>
+    <h1 class="display">Build your network.<br>Lead your future.</h1>
+    <p>ALPFA IIT connects students with professional development, mentorship, community, and career opportunities while building the next generation of leaders.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="join.html">Get Involved</a><a class="btn btn-light" href="events.html">Explore Events</a></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Why ALPFA IIT</div><h2 class="h2">More than a student organization.</h2></div><p class="lead">A campus community built around leadership, career readiness, relationships, and creating access to meaningful opportunities.</p></div>
+    <div class="grid-3">
+      <article class="card reveal"><div class="icon">01</div><h3>Professional Growth</h3><p>Workshops, panels, employer connections, resume development, interview preparation, and real career conversations.</p></article>
+      <article class="card reveal reveal-delay-1"><div class="icon">02</div><h3>Community</h3><p>Build relationships with fellow IIT students, alumni, professionals, and members of the broader ALPFA network.</p></article>
+      <article class="card reveal reveal-delay-2"><div class="icon">03</div><h3>Leadership</h3><p>Practice communication, teamwork, event planning, service, and leadership through chapter involvement.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section bg-soft"><div class="container grid-2"><div class="reveal"><div class="eyebrow">Upcoming</div><h2 class="h2">See what’s happening next.</h2><p class="lead" style="margin-top:18px">Keep up with workshops, employer events, networking opportunities, general body meetings, and chapter socials.</p><a class="btn btn-primary" href="events.html" style="margin-top:26px">View Calendar</a></div><div class="feature-band reveal reveal-delay-1"><div class="eyebrow" style="color:#d9edff">Built for the chapter</div><h3 style="font-size:2rem;margin:8px 0 12px">One calendar. Always current.</h3><p>Embed a shared Google Calendar here so approved executive board members can manage events while the website updates automatically.</p></div></div></section>
+<section class="section bg-navy"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">ALPFAmilia at IIT</div><h2 class="h2">Meet the students behind the chapter.</h2></div><a class="btn btn-light" href="board.html">Meet the Board</a></div></div></section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">IIT</span><span style="color:white">ALPFA IIT</span></a>
+        <p style="margin-top:18px;max-width:360px">A student chapter at Illinois Institute of Technology focused on leadership, professional growth, community, and opportunity.</p>
+      </div>
+
+<!-- Links to Navigate around website and other related sites -->
+      <div><h4>Chapter</h4><a href="about.html">About</a><a href="board.html">Executive Board</a><a href="events.html">Events</a></div>
+      <div><h4>Get Involved</h4><a href="join.html">Become a Member</a><a href="sponsors.html">Partner With Us</a><a href="#">Instagram</a></div>
+      <div><h4>ALPFA</h4><a href="https://www.alpfa.org/" target="_blank">National Website ↗</a><a href="https://www.alpfa.org/student-membership" target="_blank">Student Membership ↗</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> ALPFA IIT Student Chapter.</span><span>Illinois Institute of Technology · Chicago, IL</span></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
