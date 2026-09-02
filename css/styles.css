@@ -744,6 +744,45 @@ horizontal row.
   color: #dbe6f7;
 }
 
+/* ========================================
+   INNER-PAGE HERO IMAGES
+======================================== */
+
+.image-page-hero {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(3, 20, 49, 0.97) 0%,
+      rgba(7, 29, 73, 0.88) 48%,
+      rgba(0, 87, 184, 0.58) 100%
+    ),
+    var(--hero-image);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Executive Board */
+.board-hero {
+  --hero-image: url("../images/boardhero.png");
+}
+
+/* Sponsors */
+.sponsors-hero {
+  --hero-image: url("../images/sponsorhero.png");
+}
+
+/* Events */
+.events-hero {
+  --hero-image: url("../images/eventhero.png");
+}
+
+/* Get Involved */
+.join-hero {
+  --hero-image: url("../images/joinhero.png");
+}
 .about-hero {
   background:
     linear-gradient(
@@ -1054,6 +1093,10 @@ horizontal row.
     display: block;
   }
 
+  .image-page-hero {
+  background-position: 65% center;
+  background-attachment: scroll;
+}
   .nav-links.open {
     position: absolute;
     top: 82px;
