@@ -92,7 +92,7 @@ inside the header so the logo can sit farther left.
   max-width: none;
   height: 82px;
   margin: 0;
-  padding: 0 clamp(18px, 3vw, 44px);
+  padding: 0 30px;
   gap: 24px;
 }
 
@@ -137,7 +137,7 @@ larger or smaller.
   object-position: left center;
 
   /* Enlarges the visible logo without pushing the navigation */
-  transform: scale(3);
+  transform: scale(4);
   transform-origin: left center;
 }
 
