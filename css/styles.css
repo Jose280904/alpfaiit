@@ -302,7 +302,7 @@ page where it has not been replaced yet.
       rgba(7, 29, 73, 0.9) 45%,
       rgba(0, 87, 184, 0.68) 100%
     ),
-    url("..images/heroimage.jpg");
+    url("../images/heroimage.jpg");
 
   background-size: cover;
   background-position: center;
