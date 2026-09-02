@@ -1,7 +1,10 @@
-/* Global Variables */ 
+/* ========================================
+   GLOBAL VARIABLES
+======================================== */
 
 :root {
   --navy: #071d49;
+  --dark-navy: #031431;
   --blue: #0057b8;
   --electric: #0878f9;
   --sky: #dcecff;
@@ -14,7 +17,9 @@
 }
 
 
-/* Reset and Global Styles */ 
+/* ========================================
+   RESET AND GLOBAL STYLES
+======================================== */
 
 * {
   box-sizing: border-box;
@@ -48,50 +53,96 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+}
+
 .container {
   width: min(calc(100% - 40px), var(--max));
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 
-/* Header and Nav */ 
+/* ========================================
+   HEADER AND NAVIGATION
+======================================== */
 
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 1000;
+  width: 100%;
   color: #ffffff;
-  background: #031431;
+  background: var(--dark-navy);
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 4px 20px rgba(3, 20, 49, 0.2);
 }
 
-.nav {
-  height: 82px;
+/*
+This overrides the normal centered container only
+inside the header so the logo can sit farther left.
+*/
+
+.site-header .nav {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 30px;
+  width: 100%;
+  max-width: none;
+  height: 82px;
+  margin: 0;
+  padding: 0 clamp(18px, 3vw, 44px);
+  gap: 24px;
 }
+
+
+/* ========================================
+   HEADER LOGO
+======================================== */
 
 .brand {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  margin: 0;
+  color: #ffffff;
   text-decoration: none;
   font-family: "Archivo", sans-serif;
   font-weight: 800;
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  color: #ffffff;
-  background: #031431;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 4px 20px rgba(3, 20, 49, 0.2);
+
+.header-brand {
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
 }
+
+/*
+Change 78px if you want the logo slightly
+larger or smaller.
+*/
+
+.site-header .brand-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 78px;
+  height: 58px;
+  max-width: 78px;
+  max-height: 58px;
+  margin: 0;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/*
+This keeps the old IIT square working on any
+page where it has not been replaced yet.
+*/
 
 .brand-mark {
   display: grid;
@@ -115,19 +166,29 @@ a {
   );
 }
 
+
+/* ========================================
+   DESKTOP NAVIGATION LINKS
+======================================== */
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 25px;
+  justify-content: flex-end;
+  flex: 0 1 auto;
+  gap: clamp(16px, 1.7vw, 26px);
+  margin-right: 0;
   margin-left: auto;
 }
 
 .nav-links a {
   position: relative;
+  flex: 0 0 auto;
   color: #ffffff;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -146,23 +207,35 @@ a {
   right: 0;
 }
 
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
 .menu-btn {
   display: none;
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 5px;
   border: 0;
   color: #ffffff;
   background: transparent;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
+  line-height: 1;
   cursor: pointer;
 }
 
 
-/* Buttons */ 
+/* ========================================
+   BUTTONS
+======================================== */
 
 .nav-cta,
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   gap: 10px;
   min-height: 48px;
   padding: 0 22px;
@@ -172,6 +245,7 @@ a {
   letter-spacing: 0.09em;
   font-size: 0.78rem;
   font-weight: 800;
+
   transition:
     background-color 0.25s ease,
     color 0.25s ease,
@@ -186,7 +260,7 @@ a {
 
 .nav-cta:hover,
 .btn-primary:hover {
-  background: var(--navy);
+  background: var(--blue);
 }
 
 .btn-outline {
@@ -208,7 +282,9 @@ a {
 }
 
 
-/* Home Page Hero */ 
+/* ========================================
+   HOME PAGE HERO
+======================================== */
 
 .hero {
   display: grid;
@@ -245,6 +321,7 @@ a {
 
 .kicker::before {
   content: "";
+  flex: 0 0 auto;
   width: 34px;
   height: 2px;
   background: currentColor;
@@ -277,13 +354,16 @@ a {
 }
 
 
-/* Hero Blue Side Panel */ 
+/* ========================================
+   HERO BLUE SIDE PANEL
+======================================== */
 
 .hero-rail {
   position: relative;
   display: flex;
   align-items: flex-end;
   padding: 54px;
+  overflow: hidden;
   background: linear-gradient(
     150deg,
     #0478ff,
@@ -329,7 +409,9 @@ a {
 }
 
 
-/* General Sections */ 
+/* ========================================
+   GENERAL SECTIONS
+======================================== */
 
 .section {
   padding: 110px 0;
@@ -366,7 +448,9 @@ a {
 }
 
 
-/* Professional Growth Rows */ 
+/* ========================================
+   PROFESSIONAL GROWTH ROWS
+======================================== */
 
 .pillars {
   border-top: 1px solid var(--line);
@@ -413,7 +497,9 @@ a {
 }
 
 
-/* Split Color Sections */ 
+/* ========================================
+   SPLIT COLOR SECTIONS
+======================================== */
 
 .split-band {
   display: grid;
@@ -469,7 +555,9 @@ a {
 }
 
 
-/* Inner Page Hero */ 
+/* ========================================
+   INNER PAGE HERO
+======================================== */
 
 .page-hero {
   padding: 110px 0 85px;
@@ -487,7 +575,9 @@ a {
 }
 
 
-/* Editor Layouts */ 
+/* ========================================
+   EDITORIAL LAYOUTS
+======================================== */
 
 .editorial-grid {
   display: grid;
@@ -505,7 +595,9 @@ a {
 }
 
 
-/* layout */ 
+/* ========================================
+   RULED INFORMATION LISTS
+======================================== */
 
 .rule-list {
   border-top: 1px solid var(--line);
@@ -528,7 +620,9 @@ a {
 }
 
 
-/* Exec Board */ 
+/* ========================================
+   EXECUTIVE BOARD
+======================================== */
 
 .board-grid {
   display: grid;
@@ -550,6 +644,7 @@ a {
   display: grid;
   place-items: center;
   aspect-ratio: 4 / 3;
+  overflow: hidden;
   color: var(--blue);
   background: linear-gradient(
     135deg,
@@ -559,6 +654,12 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 800;
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .member h3 {
@@ -580,7 +681,9 @@ a {
 }
 
 
-/* Sponsors */ 
+/* ========================================
+   SPONSORS
+======================================== */
 
 .sponsor-list {
   display: grid;
@@ -593,6 +696,7 @@ a {
   display: grid;
   place-items: center;
   min-height: 180px;
+  padding: 25px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   color: #788396;
@@ -600,8 +704,17 @@ a {
   font-size: 1.3rem;
 }
 
+.sponsor img {
+  width: auto;
+  max-width: 180px;
+  max-height: 90px;
+  object-fit: contain;
+}
 
-/* Events Calendar */ 
+
+/* ========================================
+   EVENTS CALENDAR
+======================================== */
 
 .calendar-shell {
   padding: 30px;
@@ -610,6 +723,7 @@ a {
 }
 
 .calendar-shell iframe {
+  display: block;
   width: 100%;
   height: 660px;
   border: 0;
@@ -617,7 +731,9 @@ a {
 }
 
 
-/* Get Involved steps */ 
+/* ========================================
+   GET INVOLVED STEPS
+======================================== */
 
 .steps {
   counter-reset: step;
@@ -629,7 +745,6 @@ a {
   grid-template-columns: 90px 1fr;
   padding: 27px 0;
   border-bottom: 1px solid var(--line);
-
   counter-increment: step;
 }
 
@@ -651,12 +766,14 @@ a {
 }
 
 
-/* Footer */ 
+/* ========================================
+   FOOTER
+======================================== */
 
 .footer {
   padding: 75px 0 25px;
   color: #afbdd3;
-  background: #031431;
+  background: var(--dark-navy);
 }
 
 .footer-grid {
@@ -691,7 +808,10 @@ a {
 }
 
 
-/* Scroll Reveal animation */ 
+/* ========================================
+   SCROLL REVEAL ANIMATION
+======================================== */
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -707,9 +827,16 @@ a {
 }
 
 
-/* Tablet Layout */ 
+/* ========================================
+   SMALL DESKTOP AND TABLET NAVIGATION
+======================================== */
 
-@media (max-width: 900px) {
+/*
+The hamburger menu activates at 1100px instead
+of 900px so the navigation does not get crowded.
+*/
+
+@media (max-width: 1100px) {
   .nav-links,
   .nav-cta {
     display: none;
@@ -717,7 +844,6 @@ a {
 
   .menu-btn {
     display: block;
-    margin-left: auto;
   }
 
   .nav-links.open {
@@ -725,16 +851,40 @@ a {
     top: 82px;
     right: 0;
     left: 0;
+    z-index: 1001;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 0;
 
-    padding: 25px 20px;
-    border-bottom: 1px solid var(--line);
-    background: #ffffff;
+    margin: 0;
+    padding: 15px clamp(18px, 3vw, 44px) 25px;
+
+    color: #ffffff;
+    background: var(--dark-navy);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 14px 25px rgba(3, 20, 49, 0.25);
   }
 
+  .nav-links.open a {
+    display: block;
+    width: 100%;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links.open a::after {
+    display: none;
+  }
+}
+
+
+/* ========================================
+   TABLET LAYOUT
+======================================== */
+
+@media (max-width: 900px) {
   .hero-grid,
   .section-head,
   .editorial-grid,
@@ -779,43 +929,39 @@ a {
 }
 
 
-/* Mobile interface */ 
+/* ========================================
+   MOBILE LAYOUT
+======================================== */
 
 @media (max-width: 600px) {
   .container {
-    width: min(
-      calc(100% - 28px),
-      var(--max)
-    );
+    width: min(calc(100% - 28px), var(--max));
   }
 
-  .nav {
+  .site-header .nav {
     height: 72px;
+    padding: 0 16px;
   }
 
-.nav-links.open {
-  position: absolute;
-  top: 82px;
-  right: 0;
-  left: 0;
+  .site-header .brand-logo {
+    width: 68px;
+    height: 50px;
+    max-width: 68px;
+    max-height: 50px;
+  }
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  padding: 25px 20px;
-  color: #ffffff;
-  background: #031431;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 14px 25px rgba(3, 20, 49, 0.25);
-}
+  .nav-links.open {
+    top: 72px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 
   .hero-copy {
     padding: 65px 0;
   }
 
   .hero h1 {
-    font-size: 3.55rem;
+    font-size: clamp(3rem, 15vw, 3.55rem);
   }
 
   .hero-actions {
@@ -824,6 +970,7 @@ a {
   }
 
   .hero-rail {
+    min-height: 260px;
     padding: 35px;
   }
 
@@ -848,6 +995,14 @@ a {
 
   .calendar-shell {
     padding: 10px;
+  }
+
+  .calendar-shell iframe {
+    height: 600px;
+  }
+
+  .step {
+    grid-template-columns: 55px 1fr;
   }
 
   .footer-grid {
