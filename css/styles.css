@@ -429,6 +429,31 @@ img {
   font-weight: 800;
   line-height: 1.4;
 }
+/* Eyebrow labels placed on dark backgrounds */
+.hero .eyebrow,
+.page-hero .eyebrow,
+.bg-navy .eyebrow,
+.band-dark .eyebrow,
+.feature-band .eyebrow {
+  padding: 7px 11px;
+
+  color: #ffffff !important;
+  background: #0878f9;
+  border-left: 4px solid #8ac8ff;
+
+  line-height: 1.2;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 14px rgba(3, 20, 49, 0.2);
+}
+
+.band-blue .eyebrow {
+  padding: 7px 11px;
+  color: #ffffff !important;
+  background: var(--dark-navy);
+  border-left: 4px solid #ffffff;
+  line-height: 1.2;
+  text-shadow: none;
+}
 
 .h2 {
   margin: 12px 0;
