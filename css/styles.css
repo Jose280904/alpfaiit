@@ -428,7 +428,16 @@ page where it has not been replaced yet.
 }
 
 .eyebrow {
-  color: var(--blue);
+  display: inline-block;
+  width: fit-content;
+  padding: 3px 5px;
+
+  color: var(--blue) !important;
+  background: linear-gradient(
+    transparent 42%,
+    #dcecff 42%
+  );
+
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.9rem;
