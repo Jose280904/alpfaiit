@@ -60,9 +60,10 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(12px);
+  color: #ffffff;
+  background: #031431;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 20px rgba(3, 20, 49, 0.2);
 }
 
 .nav {
@@ -81,6 +82,15 @@ a {
   font-weight: 800;
   letter-spacing: -0.02em;
   white-space: nowrap;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  color: #ffffff;
+  background: #031431;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 20px rgba(3, 20, 49, 0.2);
 }
 
 .brand-mark {
@@ -114,6 +124,7 @@ a {
 
 .nav-links a {
   position: relative;
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -126,7 +137,7 @@ a {
   bottom: -11px;
   left: 0;
   height: 3px;
-  background: var(--electric);
+  background: #4ca0ff;
   transition: right 0.25s ease;
 }
 
@@ -138,8 +149,9 @@ a {
 .menu-btn {
   display: none;
   border: 0;
-  background: none;
-  font-size: 1.5rem;
+  color: #ffffff;
+  background: transparent;
+  font-size: 1.7rem;
   cursor: pointer;
 }
 
@@ -781,9 +793,22 @@ a {
     height: 72px;
   }
 
-  .nav-links.open {
-    top: 72px;
-  }
+.nav-links.open {
+  position: absolute;
+  top: 82px;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 25px 20px;
+  color: #ffffff;
+  background: #031431;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 14px 25px rgba(3, 20, 49, 0.25);
+}
 
   .hero-copy {
     padding: 65px 0;
