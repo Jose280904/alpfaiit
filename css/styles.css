@@ -1,5 +1,5 @@
 /* ========================================
-   GLOBAL VARIABLES
+   VARIABLES AND GLOBAL STYLES
 ======================================== */
 
 :root {
@@ -15,11 +15,6 @@
   --soft: #f3f6fa;
   --max: 1180px;
 }
-
-
-/* ========================================
-   RESET AND GLOBAL STYLES
-======================================== */
 
 * {
   box-sizing: border-box;
@@ -79,11 +74,6 @@ img {
   box-shadow: 0 4px 20px rgba(3, 20, 49, 0.2);
 }
 
-/*
-This overrides the normal centered container only
-inside the header so the logo can sit farther left.
-*/
-
 .site-header .nav {
   position: relative;
   display: flex;
@@ -95,11 +85,6 @@ inside the header so the logo can sit farther left.
   padding: 0 30px;
   gap: 24px;
 }
-
-
-/* ========================================
-   HEADER LOGO
-======================================== */
 
 .brand {
   display: flex;
@@ -122,11 +107,6 @@ inside the header so the logo can sit farther left.
   padding: 0;
 }
 
-/*
-Change 78px if you want the logo slightly
-larger or smaller.
-*/
-
 .site-header .brand-logo {
   display: block;
   width: 90px;
@@ -135,17 +115,11 @@ larger or smaller.
   max-height: none;
   object-fit: contain;
   object-position: left center;
-
-  /* Enlarges the visible logo without pushing the navigation */
   transform: scale(4);
   transform-origin: left center;
 }
 
-/*
-This keeps the old IIT square working on any
-page where it has not been replaced yet.
-*/
-
+/* Keeps the old IIT square working if it is still used */
 .brand-mark {
   display: grid;
   place-items: center;
@@ -167,11 +141,6 @@ page where it has not been replaced yet.
     0 100%
   );
 }
-
-
-/* ========================================
-   DESKTOP NAVIGATION LINKS
-======================================== */
 
 .nav-links {
   display: flex;
@@ -208,11 +177,6 @@ page where it has not been replaced yet.
 .nav-links a.active::after {
   right: 0;
 }
-
-
-/* ========================================
-   MOBILE MENU BUTTON
-======================================== */
 
 .menu-btn {
   display: none;
@@ -251,7 +215,8 @@ page where it has not been replaced yet.
   transition:
     background-color 0.25s ease,
     color 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .nav-cta,
@@ -307,8 +272,6 @@ page where it has not been replaced yet.
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Creates the subtle scrolling effect */
   background-attachment: fixed;
 }
 
@@ -326,22 +289,19 @@ page where it has not been replaced yet.
 }
 
 .kicker {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-  color: var(--electric);
+  width: fit-content;
+  padding: 7px 11px;
+  color: #ffffff;
+  background: rgba(8, 120, 249, 0.25);
+  border-left: 3px solid #4ca0ff;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 0.76rem;
+  font-size: 0.9rem;
   font-weight: 800;
-}
-
-.kicker::before {
-  content: "";
-  flex: 0 0 auto;
-  width: 34px;
-  height: 2px;
-  background: currentColor;
+  line-height: 1.2;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .hero h1,
@@ -371,9 +331,7 @@ page where it has not been replaced yet.
 }
 
 
-/* ========================================
-   HERO BLUE SIDE PANEL
-======================================== */
+/* Optional blue panel used by the redesigned hero */
 
 .hero-rail {
   position: relative;
@@ -383,8 +341,8 @@ page where it has not been replaced yet.
   overflow: hidden;
   background: linear-gradient(
     150deg,
-    #0478ff,
-    #034aa7
+    rgba(4, 120, 255, 0.82),
+    rgba(3, 74, 167, 0.82)
   );
 }
 
@@ -398,9 +356,7 @@ page where it has not been replaced yet.
   font-size: clamp(7rem, 16vw, 13rem);
   font-weight: 900;
   line-height: 1;
-
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.22);
-
   transform: rotate(90deg) translateX(20%);
   transform-origin: left bottom;
 }
@@ -427,11 +383,25 @@ page where it has not been replaced yet.
 
 
 /* ========================================
-   GENERAL SECTIONS
+   GENERAL SECTIONS AND TYPOGRAPHY
 ======================================== */
 
 .section {
   padding: 110px 0;
+}
+
+.bg-soft {
+  background: var(--soft);
+}
+
+.bg-navy {
+  color: #ffffff;
+  background: var(--navy);
+}
+
+.bg-navy .h2,
+.bg-navy .lead {
+  color: #ffffff;
 }
 
 .section-head {
@@ -446,11 +416,11 @@ page where it has not been replaced yet.
   display: inline-block;
   width: fit-content;
   padding: 3px 5px;
-
   color: var(--blue) !important;
+
   background: linear-gradient(
     transparent 42%,
-    #dcecff 42%
+    var(--sky) 42%
   );
 
   text-transform: uppercase;
@@ -476,7 +446,113 @@ page where it has not been replaced yet.
 
 
 /* ========================================
-   PROFESSIONAL GROWTH ROWS
+   GENERAL GRID HELPERS
+======================================== */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 60px;
+}
+
+.grid-3,
+.grid-4 {
+  display: grid;
+  gap: 22px;
+}
+
+/* Three-card sections are now vertical rows */
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+/* Four-card sections remain regular columns */
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+/* ========================================
+   VERTICAL INFORMATION ROWS
+======================================== */
+
+.card {
+  position: relative;
+  padding: 30px;
+  background: #f3f8ff;
+  border: 1px solid #cfe3fa;
+  border-top: 4px solid var(--electric);
+  box-shadow: 0 10px 28px rgba(7, 29, 73, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #8fc2fb;
+  box-shadow: 0 16px 36px rgba(7, 29, 73, 0.13);
+}
+
+.card .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  min-height: 34px;
+  padding: 5px 10px;
+  color: var(--blue);
+  background: var(--sky);
+  border-left: 3px solid var(--electric);
+  font-family: "Archivo", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.card h3 {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-family: "Archivo", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/*
+Each card inside a grid-3 becomes one wide,
+horizontal row.
+*/
+
+.grid-3 .card {
+  display: grid;
+  grid-template-columns: 70px minmax(210px, 0.7fr) 1.5fr;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  min-height: 135px;
+  padding: 28px 32px;
+  border-top: 1px solid #cfe3fa;
+  border-left: 4px solid var(--electric);
+}
+
+.grid-3 .card .icon,
+.grid-3 .card h3,
+.grid-3 .card p {
+  margin: 0;
+}
+
+
+/* ========================================
+   ORIGINAL PROFESSIONAL-GROWTH ROWS
 ======================================== */
 
 .pillars {
@@ -521,6 +597,48 @@ page where it has not been replaced yet.
 .pillar p {
   margin: 0;
   color: var(--muted);
+}
+
+
+/* ========================================
+   FEATURE AND QUOTE PANELS
+======================================== */
+
+.feature-band {
+  padding: 48px;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    var(--electric),
+    var(--blue)
+  );
+  box-shadow: 0 18px 40px rgba(7, 29, 73, 0.16);
+}
+
+.feature-band h3 {
+  margin: 10px 0 12px;
+  font-family: "Archivo", sans-serif;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.feature-band p {
+  margin: 0;
+  color: #e4efff;
+}
+
+.quote-panel {
+  padding: 42px;
+  color: #ffffff;
+  background: var(--navy);
+  border-left: 5px solid var(--electric);
+}
+
+.quote-panel p {
+  margin-top: 0;
+  font-family: "Archivo", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.45;
 }
 
 
@@ -603,7 +721,7 @@ page where it has not been replaced yet.
 
 
 /* ========================================
-   EDITORIAL LAYOUTS
+   EDITORIAL AND RULED LAYOUTS
 ======================================== */
 
 .editorial-grid {
@@ -620,11 +738,6 @@ page where it has not been replaced yet.
   line-height: 1.02;
   letter-spacing: -0.05em;
 }
-
-
-/* ========================================
-   RULED INFORMATION LISTS
-======================================== */
 
 .rule-list {
   border-top: 1px solid var(--line);
@@ -697,8 +810,8 @@ page where it has not been replaced yet.
 
 .meta {
   color: var(--blue);
-  font-weight: 700;
   font-size: 1rem;
+  font-weight: 700;
 }
 
 .quote {
@@ -780,6 +893,7 @@ page where it has not been replaced yet.
   content: "0" counter(step);
   color: var(--electric);
   font-family: "Archivo", sans-serif;
+  font-size: 0.95rem;
   font-weight: 800;
 }
 
@@ -837,7 +951,7 @@ page where it has not been replaced yet.
 
 
 /* ========================================
-   SCROLL REVEAL ANIMATION
+   SCROLL REVEAL
 ======================================== */
 
 .reveal {
@@ -856,13 +970,8 @@ page where it has not been replaced yet.
 
 
 /* ========================================
-   SMALL DESKTOP AND TABLET NAVIGATION
+   SMALL DESKTOP NAVIGATION
 ======================================== */
-
-/*
-The hamburger menu activates at 1100px instead
-of 900px so the navigation does not get crowded.
-*/
 
 @media (max-width: 1100px) {
   .nav-links,
@@ -916,7 +1025,8 @@ of 900px so the navigation does not get crowded.
   .hero-grid,
   .section-head,
   .editorial-grid,
-  .split-band {
+  .split-band,
+  .grid-2 {
     grid-template-columns: 1fr;
   }
 
@@ -931,6 +1041,18 @@ of 900px so the navigation does not get crowded.
 
   .hero-rail {
     min-height: 310px;
+  }
+
+  .grid-3 .card {
+    grid-template-columns: 65px 1fr;
+  }
+
+  .grid-3 .card p {
+    grid-column: 2;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .pillar {
@@ -974,14 +1096,18 @@ of 900px so the navigation does not get crowded.
   .site-header .brand-logo {
     width: 68px;
     height: 50px;
-    max-width: 68px;
-    max-height: 50px;
+    transform: scale(3);
   }
 
   .nav-links.open {
     top: 72px;
     padding-right: 16px;
     padding-left: 16px;
+  }
+
+  .hero {
+    background-position: 62% center;
+    background-attachment: scroll;
   }
 
   .hero-copy {
@@ -1011,9 +1137,36 @@ of 900px so the navigation does not get crowded.
     margin-bottom: 38px;
   }
 
+  .grid-3 .card {
+    display: block;
+    min-height: 0;
+    padding: 25px;
+  }
+
+  .grid-3 .card .icon {
+    margin-bottom: 18px;
+  }
+
+  .grid-3 .card h3 {
+    margin-bottom: 12px;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
   .pillar {
     grid-template-columns: 45px 1fr;
     gap: 12px;
+  }
+
+  .feature-band,
+  .quote-panel {
+    padding: 30px 24px;
   }
 
   .board-grid,
@@ -1046,117 +1199,26 @@ of 900px so the navigation does not get crowded.
     margin-top: 8px;
   }
 }
-@media (max-width: 600px) {
-  .hero {
-    background-position: 62% center;
-    background-attachment: scroll;
-  }
-}
+
 
 /* ========================================
-   INFORMATION CARDS
+   REDUCED-MOTION ACCESSIBILITY
 ======================================== */
 
-.grid-3,
-.grid-4 {
-  display: grid;
-  gap: 22px;
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.card {
-  position: relative;
-  padding: 30px;
-  background: #f3f8ff;
-  border: 1px solid #cfe3fa;
-  border-top: 4px solid var(--electric);
-  box-shadow: 0 10px 28px rgba(7, 29, 73, 0.07);
-
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #8fc2fb;
-  box-shadow: 0 16px 36px rgba(7, 29, 73, 0.13);
-}
-
-.card .icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 45px;
-  min-height: 34px;
-  margin-bottom: 24px;
-  padding: 5px 10px;
-
-  color: var(--blue);
-  background: #dcecff;
-  border-left: 3px solid var(--electric);
-
-  font-family: "Archivo", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 800;
-}
-
-.card h3 {
-  margin: 0 0 14px;
-  color: var(--ink);
-  font-family: "Archivo", sans-serif;
-  font-size: 1.35rem;
-  line-height: 1.25;
-}
-
-.card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-@media (max-width: 900px) {
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  .card {
-    padding: 25px;
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
-}
 
-.hero .kicker {
-  display: inline-flex;
-  width: fit-content;
-  padding: 7px 11px;
-
-  color: #ffffff !important;
-  background: rgba(8, 120, 249, 0.25);
-  border-left: 3px solid #4ca0ff;
-
-  font-size: 0.9rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-}
-
-.hero .kicker::before {
-  display: none;
+  .card,
+  .pillar,
+  .btn {
+    transition: none;
+  }
 }
