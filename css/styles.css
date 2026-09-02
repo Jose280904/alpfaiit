@@ -943,6 +943,34 @@ horizontal row.
   background: var(--dark-navy);
 }
 
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  color: #ffffff;
+}
+
+.footer-logo {
+  display: block;
+  width: 75px;
+  height: 55px;
+  max-width: none;
+  object-fit: contain;
+  object-position: left center;
+
+  /* Compensates for the transparent space in the logo file */
+  transform: scale(3);
+  transform-origin: left center;
+}
+
+.footer-brand span {
+  position: relative;
+  color: #ffffff;
+  font-family: "Archivo", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr repeat(3, 1fr);
