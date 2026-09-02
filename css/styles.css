@@ -129,14 +129,16 @@ larger or smaller.
 
 .site-header .brand-logo {
   display: block;
-  flex: 0 0 auto;
-  width: 78px;
-  height: 58px;
-  max-width: 78px;
-  max-height: 58px;
-  margin: 0;
+  width: 90px;
+  height: 60px;
+  max-width: none;
+  max-height: none;
   object-fit: contain;
   object-position: left center;
+
+  /* Enlarges the visible logo without pushing the navigation */
+  transform: scale(3);
+  transform-origin: left center;
 }
 
 /*
